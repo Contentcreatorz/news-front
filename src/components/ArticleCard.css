@@ -1,10 +1,9 @@
 .article-card {
-    max-width: 950px;
-    max-height: 303px;
-    border: 1px solid #737687;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
+    max-width: 950px;
+    border: 1px solid #737687;
+    border-radius: 10px;
     margin: 35px;
     padding: 35px;
 }
@@ -12,44 +11,35 @@
 .card-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 35px;
 }
 
-.card-header .user-image {
-    width: 66px;
-    height: 66px;
-    margin-right: 35px;
-}
-
-.card-header .author {
+.author-container {
+    display: flex;
+    align-items: center;
     font-size: 20px;
     font-weight: bold;
     color: #707070;
-    margin-right: auto;
 }
 
-.card-header .votes {
+.author {
+    margin-left: 35px;
+}
+
+.votes {
     font-size: 18px;
     font-weight: 600;
     color: #707070;
 }
 
+
 .card-title {
+    display: flex;
     font-size: 25px;
     font-weight: bold;
     color: #707070;
     margin-bottom: 35px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.read-article-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 50px;
 }
 
 .read-article-button {
@@ -63,6 +53,7 @@
     text-decoration: none;
     cursor: pointer;
     transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    margin-bottom: 35px;
 }
 
 .read-article-button:hover {
@@ -76,4 +67,10 @@
     font-size: 18px;
     font-weight: 600;
     color: #707070;
+}
+
+@media (max-width: 600px) {
+    .card-title {
+        font-size: 20px;
+    }
 }
