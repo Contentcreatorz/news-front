@@ -17,11 +17,11 @@ export const ArticleList = () => {
             })
     }, [])
 
-    if (loading) return (<div>Loading...</div>)
-
     const authorName = articles
         .reduce((articleAuthor, { article_id, author }) => (articleAuthor[article_id] = users
             .find(({ username }) => username === author).name) && articleAuthor, {})
+
+    if (loading) return (<div>Loading...</div>)
 
     return (articles
         .map(article => (<ArticleCard article={article} authorName={authorName} key={article.article_id} />)))
