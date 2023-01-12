@@ -1,15 +1,17 @@
-import { useContext } from "react";
-import { ArticleCard } from "./ArticleCard"
-import './ArticleCard.css'
+import { Route, Routes, useLocation } from "react-router-dom";
 import { ArticleList } from "./ArticleList";
-import { SearchBar } from "./Filter/SearchBar"
+import { SingleArticle } from "./SingleArticle";
 
 export const Main = ({ username }) => {
 
-    // const selectedCategory = useContext(SelectedCategoryContext)
+    const { pathname } = useLocation()
 
     return (
-        <ArticleList />
-        // <SearchBar />
+        <Routes>
+            <Route path="/" element={<ArticleList />} />
+            <Route path={`/articles/:id`} element={<SingleArticle />} />
+        </Routes>
+
+
     )
 }

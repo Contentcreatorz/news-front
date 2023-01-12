@@ -1,3 +1,4 @@
+import './ArticleCard.css'
 import moment from "moment/moment"
 import { Link } from "react-router-dom"
 import { UserImage } from "./UserImage"
