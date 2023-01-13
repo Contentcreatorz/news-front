@@ -6,7 +6,6 @@ import { useContext, useState } from "react";
 
 export const Header = ({ username, setSelectedCategory }) => {
 
-    // const selectedCategory = useContext(SelectedCategoryContext);
 
 
     return (<header className="App-header">

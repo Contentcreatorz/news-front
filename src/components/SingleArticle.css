@@ -1,0 +1,44 @@
+.Article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px;
+    max-width: 1175px;
+}
+
+.article-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.article-topic {
+    font-weight: 300;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.article-author {
+    font-weight: 300;
+    font-size: 16px;
+    color: #737687;
+}
+
+.article-body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin-block-end: 35px;
+}
+
+.article-title,
+.article-topic,
+.article-comment_count,
+.article-created_at {
+    color: #193566;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { fetchArticles, fetchUsers } from "../utils/api"
 import { ArticleCard } from "./ArticleCard"
+import { Loading } from "./Loading"
 
 export const ArticleList = () => {
     const [loading, setLoading] = useState(true)
@@ -17,12 +18,12 @@ export const ArticleList = () => {
             })
     }, [])
 
-    const authorName = articles
+    const authorNameReference = articles
         .reduce((articleAuthor, { article_id, author }) => (articleAuthor[article_id] = users
             .find(({ username }) => username === author).name) && articleAuthor, {})
 
-    if (loading) return (<div>Loading...</div>)
+    if (loading) return (<Loading />)
 
     return (articles
-        .map(article => (<ArticleCard article={article} authorName={authorName} key={article.article_id} />)))
+        .map(article => (<ArticleCard article={article} authorNameReference={authorNameReference} key={article.article_id} />)))
 }
