@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { formatCommentCount, formatVoteCount } from '../../utils/display'
 import { UserImage } from '../userImage'
 
-export const ArticleCard = ({ article: { article_id, votes, comment_count, author, created_at, topic, title }, authorNameReference }) => (
+export const ArticleCard = ({ article: { article_id, votes, authorName, comment_count, author, created_at, topic, title } }) => (
     <article className="article-card">
         <header className="card-header">
             <h1 className="card-title" itemprop="headline">{title}</h1>
@@ -12,8 +12,8 @@ export const ArticleCard = ({ article: { article_id, votes, comment_count, autho
         </header>
         <div className="card-mid">
             <div className="author-container">
-                <UserImage username={author} className="card-picture" alt={authorNameReference[article_id]} />
-                <div className="author" itemprop="author">{`${authorNameReference[article_id]} 🖋`}</div>
+                <UserImage username={author} className="card-picture" alt={authorName} />
+                <div className="author" itemprop="author">{`${authorName} 🖋`}</div>
             </div>
         </div>
         <div className='button-container'>
