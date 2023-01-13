@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { fetchArticles, fetchUsers } from "../utils/api"
-import { ArticleCard } from "./ArticleCard"
-import { Loading } from "./Loading"
+import { fetchArticles, fetchUsers } from "../../utils/api"
+import { Loading } from "../loading"
+import { ArticleCard } from "./card"
 
 export const ArticleList = () => {
     const [loading, setLoading] = useState(true)

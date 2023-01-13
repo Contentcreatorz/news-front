@@ -1,9 +1,9 @@
 
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { Header } from './components/Header/Header';
 import { useState } from 'react';
-import { Main } from './components/Main';
+import { Header } from './components/Header/header';
+import { Main } from './components/main';
 
 
 function App() {

@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { ArticleList } from "./ArticleList";
-import { ArticlePage } from "./ArticlePage";
+import { ArticleList } from "./Article/list";
+import { ArticlePage } from "./Article/page";
 
 export const Main = ({ username }) => {
 
@@ -9,7 +9,5 @@ export const Main = ({ username }) => {
             <Route path="/" element={<ArticleList />} />
             <Route path={`/articles/:id`} element={<ArticlePage />} />
         </Routes>
-
-
     )
 }

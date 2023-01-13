@@ -1,10 +1,9 @@
-import userEvent from "@testing-library/user-event"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { fetchArticleById, fetchUsers } from "../utils/api"
-import { Article } from "./Article"
-import { Loading } from "./Loading"
-import './SingleArticle.css'
+import { fetchArticleById, fetchUsers } from "../../utils/api"
+import { Loading } from "../loading"
+import { Article } from "./content"
+
 
 export const ArticlePage = () => {
     const { id } = useParams()
