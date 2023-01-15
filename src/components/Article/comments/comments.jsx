@@ -1,9 +1,10 @@
 import moment from "moment/moment";
 import './style.css'
 
-export const CommentsList = ({ comments: { comments } }) => {
+export const CommentsList = ({ comments: { comments } }) => (
 
-    return (<section className="comments-section">
+
+    <section className="comments-section">
         <hr className="comments-section__divider" />
         {comments.map(({ comment_id, created_at, author, votes, body }) => (
             <article key={comment_id} className="comments-section__comment-container">
@@ -18,5 +19,5 @@ export const CommentsList = ({ comments: { comments } }) => {
                 <hr className="comments-section__divider" />
             </article>
         ))}
-    </section>)
-}
+    </section>
+)    

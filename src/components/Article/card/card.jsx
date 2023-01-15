@@ -13,25 +13,26 @@ export const ArticleCard = ({ article: {
     topic,
     votes,
     title
-} }) => (<Link to={`/articles/${article_id}`} style={{ textDecoration: "none" }}>
-    <article className="article-card">
-        <div className="card-mid">
+} }) => (<Link to={`/articles/${article_id}`} rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+    <article role="article" className="article-card">
+        <div className="card-author-info">
             <div className="author-container">
                 <UserImage username={author} className="userImage" alt={authorName} />
-                <div className="author" itemProp="author">{`${authorName}`}</div>
+                <span className="author" itemProp="author">{`${authorName}`}</span>
             </div>
             <div className="card-votes" itemProp="upvoteCount">{`❤ ${formatVoteCount(votes)}`}</div>
         </div>
         <header className="card-header">
-            <h1 className="card-title" itemProp="headline">{title}</h1>
+            <h2 className="card-title" itemProp="headline">{title}</h2>
         </header>
         <footer className="card-footer">
             <div className="card-left">
-                <div itemProp="commentCount">{`💬 ${formatCommentCount(comment_count)}`}</div>
+                <span itemProp="commentCount">{`💬 ${formatCommentCount(comment_count)}`}</span>
                 <div className='separator'>•</div>
-                <time className="created-at" itemProp="datePublished" dateTime={created_at}>{`📆 ${moment.utc(created_at).format('M/D/YYYY')}`}</time>
+                <span className="created-at" itemProp="datePublished" dateTime={created_at}>{`📆 ${moment.utc(created_at).format('M/D/YYYY')}`}</span>
             </div>
-            <div itemProp="articleSection">{topic}</div>
+            <span itemProp="articleSection">{topic}</span>
         </footer>
     </article>
-</Link>)
+</Link>
+)
