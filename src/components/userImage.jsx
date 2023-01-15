@@ -14,7 +14,7 @@ export const UserImage = ({ username }) => {
 
     return (<div className="userImageMask">
         <div className="userContainer">
-            {loading ? <div>Loading...</div> : <img src={imageUrl} className="userImage" alt={`profile-picture`} />}
+            {loading ? <div>Loading...</div> : <img src={imageUrl} className="userImage" alt={username} />}
         </div>
     </div >);
 };

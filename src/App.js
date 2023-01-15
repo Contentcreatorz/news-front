@@ -1,24 +1,31 @@
-
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { Header } from './components/Header/Header';
-import { createContext, useState } from 'react';
-import { Main } from './components/Main';
+import { BrowserRouter } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Header } from './components/Header/header';
+import { Main } from './components/main';
+import { fetchUsers } from './utils/api';
+import { Loading } from './components/loading';
 
-
-// export const SelectedCategoryContext = createContext();
 
 function App() {
   const [username, setUsername] = useState('happyamy2016')
-  const [selectedCategory, setSelectedCategory] = useState('')
+  const [users, setUsers] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchUsers().then((users) => {
+      setUsers(users)
+      setLoading(false)
+    })
+  }, [])
+
+  if (loading) return (<Loading />)
 
   return (
     <BrowserRouter>
       <div className="App">
-        {/* <SelectedCategoryContext.Provider value={selectedCategory}> */}
-        <Header username={username} setSelectedCategory={setSelectedCategory} />
-        <Main username={username} />
-        {/* </SelectedCategoryContext.Provider> */}
+        <Header username={username} />
+        <Main users={users} />
       </div>
     </BrowserRouter>
   );

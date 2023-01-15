@@ -1,3 +1,30 @@
+@font-face {
+    font-family: 'Mona';
+    src: url('./Assets/Mona Sans/Mona-Sans.woff2') format('woff2'),
+        url('./Assets/Mona Sans/Mona-Sans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .App {
-    background-color: #ECF0F3;
+    background: linear-gradient(to top right, white, #ECF0F3);
+    font-family: 'Mona', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+}
+
+.userImageMask {
+    height: max-content;
+    width: max-content;
+}
+
+.userContainer {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userImage {
+    width: 66px;
+    height: 100%;
 }
