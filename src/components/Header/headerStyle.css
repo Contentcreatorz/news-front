@@ -1,62 +1,50 @@
+.App-header {
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px;
+    height: 150px;
+    justify-content: center;
+    padding-inline: 75px;
+    border-bottom: #1d1d1f solid 1px;
+}
+
 .header-content {
     display: flex;
     justify-content: space-between;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-.header-link {
-    /* padding-left: 251px; */
-    text-decoration: none;
-    color: white;
-    /* position: relative; */
-}
-
-.userImageMask {
-    /* padding-right: 251px; */
-    position: relative;
-}
-
-.userContainer {
-    width: 66px;
-    height: 66px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.userImage {
-    width: 66px;
-    height: 100%;
 }
 
 .topic-container {
-    /* width: 575px; */
-    height: 80px;
+    max-width: 575px;
+    width: 100%;
+    height: max-content;
+    margin-inline: 15px;
 }
 
 .topic-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 20px;
-}
-
-.topic-link {
-    text-decoration: none;
-    color: white;
 }
 
 .topic-divider {
-    width: 1px;
+    box-shadow: 0px 0px 0px 0.5px #1d1d1f;
     height: 50px;
-    background-color: white;
-    margin: 0 20px;
+}
+
+.header-link,
+.topic-link {
+    font-size: 20px;
+    text-decoration: none;
+    color: #1d1d1f;
+}
+
+.header-link {
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .card-title {
+        font-size: 16px;
+    }
 }
