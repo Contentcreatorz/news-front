@@ -24,4 +24,4 @@ yarn-error.log*
 
 #font
 
-./src/Assets
+src/Assets/*

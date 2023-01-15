@@ -1,0 +1,46 @@
+.comments-section {
+    max-width: 300px;
+}
+
+.comments-section__divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.comments-section__comment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comments-section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.comments-section__date {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.comments-section__author {
+    margin-left: 10px;
+}
+
+.comments-section__votes-container {
+    margin: 10px 0;
+}
+
+.comments-section__votes {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.comments-section__body {
+    text-align: justify;
+    margin: 10px 0;
+}

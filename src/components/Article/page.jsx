@@ -1,26 +1,30 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { fetchArticleById, fetchUsers } from "../../utils/api"
+import { fetchArticleById, fetchCommentsByArticleId } from "../../utils/api"
 import { Loading } from "../loading"
-import { Article } from "./content"
+import { CommentsList } from "./comments/comments"
+import { Article } from "./singleArticle/article"
 
 
-export const ArticlePage = () => {
+export const ArticlePage = ({ users }) => {
     const { id } = useParams()
     const [article, setArticle] = useState({})
     const [loading, setLoading] = useState(true)
-    const [authorName, setAuthorName] = useState('')
-
+    const [comments, setComments] = useState([])
     useEffect(() => {
-        Promise.all([fetchArticleById(id), fetchUsers()])
-            .then(([article, users]) => {
+        Promise.all([fetchArticleById(id), fetchCommentsByArticleId(id)])
+            .then(([article, comments]) => {
+                article.authorName = users.find(user => user.username === article.author).name
                 setArticle(article)
-                setAuthorName(users.find(({ username }) => username === article.author).name)
+                setComments(comments)
                 setLoading(false)
             })
     }, [id])
 
     if (loading) return (<Loading />)
 
-    return (<Article article={article} authorName={`: ${authorName}`} />)
+    return (<><Article article={article} />
+        <CommentsList comments={comments} />
+    </>)
+
 }

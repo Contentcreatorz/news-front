@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { fetchArticles, fetchUsers } from "../../utils/api"
 import { createAndAssignAuthorReference } from "../../utils/display"
 import { Loading } from "../loading"
-import { ArticleCard } from "./card"
+import { ArticleCard } from "./card/card"
 
 export const ArticleList = ({ users }) => {
     const [loading, setLoading] = useState(true)

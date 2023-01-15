@@ -24,3 +24,14 @@ export const fetchArticleById = (id) =>
             }
             return response.json()
         }).then(({ article }) => article).catch(error => console.log(error))
+
+export const fetchCommentsByArticleId = (id) => {
+    return fetch(`https://nc-be-project-news.onrender.com/api/articles/${id}/comments`)
+        .then(response => {
+            return response.json()
+        }).then((comments) => {
+            return comments
+        }).catch((error) => {
+            console.log('error :>> ', error)
+        })
+}
