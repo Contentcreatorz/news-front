@@ -70,3 +70,42 @@
 .article-created_at {
     color: #193566;
 }
+
+.article-meta {
+    display: inline-block;
+}
+
+.article-meta>* {
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding-block: 5pt;
+    padding-inline: 10px;
+    width: max-content;
+    background-color: radial-gradient(#ECF0F3, white);
+    margin: 15px;
+    cursor: pointer;
+    border: rgba(255, 255, 255, 0.184) solid 1px;
+    box-shadow: 4.5px 4.5px 16px rgba(25, 53, 102, 0.5), -6px -6px 16px 6px rgba(255, 255, 255, 1);
+}
+
+.votes-total {
+    padding: 35px;
+    color: #2C3A47;
+    margin-bottom: 0px;
+    font-size: 32px;
+    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.votes-up:active {
+    box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
+    color: green;
+    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.votes-down:active {
+    box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
+    color: crimson;
+}
