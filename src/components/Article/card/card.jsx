@@ -36,3 +36,4 @@ export const ArticleCard = ({ article: {
     </article>
 </Link>
 )
+
