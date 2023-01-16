@@ -96,13 +96,11 @@
     color: #2C3A47;
     margin-bottom: 0px;
     font-size: 32px;
-    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .votes-up:active {
     box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
     color: green;
-    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .votes-down:active {
