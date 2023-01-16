@@ -25,9 +25,9 @@ export const CommentsList = ({ comments: { comments } }) => (
                         <div className="votes-container">
                             <span className="votes">Votes: {votes}</span>
                             <br />
-                            <span className="votes">Vote ✔</span>
+                            <span className="votes-up">Vote ✔</span>
                             <br />
-                            <span className="votes">Vote ✖</span>
+                            <span className="votes-down">Vote ✖</span>
                         </div>
                         <div className="comment-delete">
                             Delete 🗑
