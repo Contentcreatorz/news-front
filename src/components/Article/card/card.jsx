@@ -13,7 +13,7 @@ export const ArticleCard = ({ article: {
     topic,
     votes,
     title
-} }) => (<Link to={`/articles/${article_id}`} rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+} }) => (
     <article role="article" className="article-card">
         <div className="card-author-info">
             <div className="author-container">
@@ -22,9 +22,11 @@ export const ArticleCard = ({ article: {
             </div>
             <div className="card-votes" itemProp="upvoteCount">{`❤ ${formatVoteCount(votes)}`}</div>
         </div>
-        <header className="card-header">
-            <h2 className="card-title" itemProp="headline">{title}</h2>
-        </header>
+        <Link to={`/articles/${article_id}`} rel="noopener noreferrer" className="card-link">
+            <header className="card-header">
+                <h2 className="card-title" itemProp="headline">{title}</h2>
+            </header>
+        </Link>
         <footer className="card-footer">
             <div className="card-left">
                 <span itemProp="commentCount">{`💬 ${formatCommentCount(comment_count)}`}</span>
@@ -34,6 +36,5 @@ export const ArticleCard = ({ article: {
             <span itemProp="articleSection">{topic}</span>
         </footer>
     </article>
-</Link>
 )
 

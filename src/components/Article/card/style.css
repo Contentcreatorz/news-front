@@ -35,6 +35,11 @@
         margin-inline: 0px;
     }
 
+    .card-link {
+        text-decoration: none;
+        color: #707070;
+    }
+
     .article-card .card-title {
         box-sizing: border-box;
         font-size: calc(18px+ 1vw);
@@ -117,6 +122,11 @@
 
     .article-card:hover [itemProp="articleSection"] {
         background-color: cornflowerblue;
+    }
+
+    .article-card:hover .card-link {
+        text-decoration: none;
+        color: #193566;
     }
 
     .card-votes:hover {

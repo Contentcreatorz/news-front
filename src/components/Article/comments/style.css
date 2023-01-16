@@ -8,6 +8,12 @@
     text-transform: uppercase;
 }
 
+.comment-delete {
+    font-size: medium;
+    font-weight: 600;
+
+}
+
 .comment-wrap {
     -webkit-text-size-adjust: 100%;
     font-size: clamp(12px, .8rem + .25vw, 20px);

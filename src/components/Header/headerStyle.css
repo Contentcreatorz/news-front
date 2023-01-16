@@ -6,6 +6,7 @@
     justify-content: center;
     padding-inline: 75px;
     border-bottom: #1d1d1f solid 1px;
+    font-family: 'Blanco';
 }
 
 .header-content {
@@ -25,6 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 20px;
 }
 
 .topic-divider {
@@ -34,12 +36,13 @@
 
 .header-link,
 .topic-link {
-    font-size: 20px;
     text-decoration: none;
     color: #1d1d1f;
 }
 
 .header-link {
+    font-size: 42px;
+    font-weight: 900;
     white-space: nowrap;
 }
 

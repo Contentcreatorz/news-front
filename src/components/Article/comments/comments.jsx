@@ -22,11 +22,15 @@ export const CommentsList = ({ comments: { comments } }) => (
                         </div>
                     </header>
                     <footer className="comment-actions">
-                        <div className="comment-delete">
-                            Delete ❌
-                        </div>
                         <div className="votes-container">
                             <span className="votes">Votes: {votes}</span>
+                            <br />
+                            <span className="votes">Vote ✔</span>
+                            <br />
+                            <span className="votes">Vote ✖</span>
+                        </div>
+                        <div className="comment-delete">
+                            Delete 🗑
                         </div>
                     </footer>
                 </article>
