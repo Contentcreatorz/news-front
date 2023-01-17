@@ -44,7 +44,5 @@ export const patchVotesByArticleId = (id, votes) => {
             console.log('response.data :>> ', response.data);
             return response.data
         })
-        .catch((err) => {
-            console.log('err :>> ', err);
-        })
+
 }

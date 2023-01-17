@@ -11,15 +11,22 @@ export const ArticlePage = ({ users }) => {
     const [loading, setLoading] = useState(true)
     const [comments, setComments] = useState([])
     const [votes, setVotes] = useState(0)
+    const [error, setError] = useState(null);
 
     const handleUpVote = () => {
         setVotes(votes + 1)
-        patchVotesByArticleId(id, { inc_votes: 1 })
+        patchVotesByArticleId(id, { inc_votes: -1 })
+            .catch(error => {
+                setError(error.message)
+            });
     }
 
     const handleDownVote = () => {
         setVotes(votes - 1)
         patchVotesByArticleId(id, { inc_votes: -1 })
+            .catch(error => {
+                setError(error.message)
+            });
     }
 
     useEffect(() => {
@@ -29,12 +36,13 @@ export const ArticlePage = ({ users }) => {
                 setArticle(article)
                 setComments(comments)
                 setVotes(article.votes)
-                console.log('votes :>> ', votes);
                 setLoading(false)
             })
     }, [id])
 
     if (loading) return <Loading />
+
+    if (error) return (<p>Error! {error} </p>)
 
     return (
         <>
