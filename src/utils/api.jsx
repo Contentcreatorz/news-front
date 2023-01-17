@@ -1,3 +1,6 @@
+import axios from "axios";
+
+
 export const fetchImage = (username) =>
     fetch(`https://nc-be-project-news.onrender.com/api/users`)
         .then(response => response.json())
@@ -33,5 +36,15 @@ export const fetchCommentsByArticleId = (id) => {
             return comments
         }).catch((error) => {
             console.log('error :>> ', error)
+        })
+}
+export const patchVotesByArticleId = (id, votes) => {
+    return axios.patch(`https://nc-be-project-news.onrender.com/api/articles/${id}`, votes)
+        .then((response) => {
+            console.log('response.data :>> ', response.data);
+            return response.data
+        })
+        .catch((err) => {
+            console.log('err :>> ', err);
         })
 }

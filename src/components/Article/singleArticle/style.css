@@ -63,6 +63,7 @@
     background-color: #FBFBFB;
     color: #2C3A47;
     border-radius: 10px;
+
 }
 
 .article-title,
@@ -84,10 +85,12 @@
     padding-block: 5pt;
     padding-inline: 10px;
     width: max-content;
-    background-color: radial-gradient(#ECF0F3, white);
+    background: radial-gradient(#ECF0F3, white);
     margin: 35px;
     cursor: pointer;
+    user-select: none;
     border: rgba(255, 255, 255, 0.184) solid 1px;
+    background: linear-gradient(to bottom right, #ECF0F3, white);
     box-shadow: 4.5px 4.5px 16px rgba(25, 53, 102, 0.5), -6px -6px 16px 6px rgba(255, 255, 255, 1);
 }
 
@@ -104,6 +107,7 @@
 }
 
 .votes-down:active {
+
     box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
     color: crimson;
 }

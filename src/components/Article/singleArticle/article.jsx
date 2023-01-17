@@ -2,7 +2,10 @@ import moment from "moment";
 import './style.css'
 
 export const Article = ({
-    article: { title, topic, authorName, body, votes, created_at }
+    article: { title, topic, authorName, body, created_at },
+    handleUpVote,
+    handleDownVote,
+    votes
 }) => (
     <article className="Article">
         <div className="article-topic" itemProp="articleSection">
@@ -19,10 +22,8 @@ export const Article = ({
         </div>
         <span className="votes-total">{`Total Votes 🗳: ${votes}`} </span>
         <footer className="article-meta">
-            <span className="votes-up">Vote ✔</span>
-            <span className="votes-down">Vote ✖</span>
-            {/* <div className="article-comment_count" itemProp="commentCount">
-                {formatCommentCount(comment_count)}
-            </div> */}
+            <span className="votes-up" onClick={handleUpVote}>Vote ✔</span>
+            <span className="votes-down" onClick={handleDownVote} >Vote ✖</span>
         </footer>
-    </article>)
+    </article>
+)

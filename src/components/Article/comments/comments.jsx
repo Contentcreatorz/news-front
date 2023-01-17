@@ -37,5 +37,6 @@ export const CommentsList = ({ comments: { comments } }) => (
                 </footer>
             </article>
         ))}
+
     </section >
 )    
