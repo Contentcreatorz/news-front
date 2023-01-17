@@ -15,7 +15,7 @@ export const ArticlePage = ({ users }) => {
 
     const handleUpVote = () => {
         setVotes(votes + 1)
-        patchVotesByArticleId(id, { inc_votes: -1 })
+        patchVotesByArticleId(id, { inc_votes: + 1 })
             .catch(error => {
                 setError(error.message)
             });
