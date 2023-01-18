@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { fetchArticleById, fetchCommentsByArticleId, patchVotesByArticleId } from "../../utils/api"
+import { fetchArticleById, fetchCommentsByArticleId, patchVotesByArticleId, postMessageToArticle } from "../../utils/api"
 import { Loading } from "../loading"
 import { CommentsList } from "./comments/comments"
 import { Article } from "./singleArticle/article"
 
-export const ArticlePage = ({ users }) => {
+export const ArticlePage = ({ users, username }) => {
     const { id } = useParams()
     const [article, setArticle] = useState({})
     const [loading, setLoading] = useState(true)
     const [comments, setComments] = useState([])
     const [votes, setVotes] = useState(0)
     const [error, setError] = useState(null);
+
+    
+    function handleSubmit({target: [{value}]}) {
+        postMessageToArticle(id, {username, body: value }).catch((error) => {
+            console.log('error :>> ', error)
+        })
+    }
 
     const handleUpVote = () => {
         setVotes(votes + 1)
@@ -52,7 +59,7 @@ export const ArticlePage = ({ users }) => {
                 handleDownVote={handleDownVote}
                 votes={votes}
             />
-            <CommentsList comments={comments} />
+            <CommentsList comments={comments} handleSubmit={handleSubmit} />
         </>
     )
 }

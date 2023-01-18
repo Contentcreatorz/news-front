@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export const fetchImage = (username) =>
     fetch(`https://nc-be-project-news.onrender.com/api/users`)
         .then(response => response.json())
@@ -38,11 +37,13 @@ export const fetchCommentsByArticleId = (id) => {
             console.log('error :>> ', error)
         })
 }
+
 export const patchVotesByArticleId = (id, votes) => {
     return axios.patch(`https://nc-be-project-news.onrender.com/api/articles/${id}`, votes)
-        .then((response) => {
-            console.log('response.data :>> ', response.data);
-            return response.data
-        })
+        .then(response => response.data)
+}
 
+export const postMessageToArticle = (id, message) => {
+    return axios.post(`https://nc-be-project-news.onrender.com/api/articles/${id}/comments`, message)
+        .then(response => response.data)
 }

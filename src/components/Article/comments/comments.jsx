@@ -2,7 +2,7 @@ import moment from "moment/moment";
 import './style.css'
 
 
-export const CommentsList = ({ comments: { comments } }) => (
+export const CommentsList = ({ comments: { comments }, handleSubmit, handleChange }) => (
 
     < section className="comments-section" >
         <h1 className="section-title">Comments</h1>
@@ -18,7 +18,7 @@ export const CommentsList = ({ comments: { comments } }) => (
                             {moment(created_at).format('D/M/YYYY')}
                         </time>
                     </div>
-                    <div className="comment-body">
+                    <div className="comment-body" tabIndex={`0`} >
                         <p>
                             {body}
                         </p>
@@ -37,6 +37,12 @@ export const CommentsList = ({ comments: { comments } }) => (
                 </footer>
             </article>
         ))}
+
+        <form className="message-container" onSubmit={handleSubmit}>
+            <textarea className="message" placeholder="Write your message here..." rows="3" ></textarea>
+            <button className="sub-button" type="submit">Send Message</button>
+        </form>
+
 
     </section >
 )    

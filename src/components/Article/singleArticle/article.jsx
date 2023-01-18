@@ -22,8 +22,8 @@ export const Article = ({
         </div>
         <span className="votes-total">{`Total Votes 🗳: ${votes}`} </span>
         <footer className="article-meta">
-            <span className="votes-up" onClick={handleUpVote}>Vote ✔</span>
-            <span className="votes-down" onClick={handleDownVote} >Vote ✖</span>
+            <button className="votes-up" onClick={handleUpVote}>Vote ✔</button>
+            <button className="votes-down" onClick={handleDownVote} >Vote ✖</button>
         </footer>
     </article>
 )
