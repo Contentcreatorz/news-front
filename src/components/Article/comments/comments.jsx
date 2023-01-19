@@ -1,8 +1,9 @@
 import moment from "moment/moment";
 import './style.css'
+import { Loading } from "../../loading";
 
 
-export const CommentsList = ({ comments: { comments }, handleSubmit, handleChange }) => (
+export const CommentsList = ({ comments: { comments }, handleSubmit, commentLoading, commentError  }) => (
 
     < section className="comments-section" >
         <h1 className="section-title">Comments</h1>
@@ -37,12 +38,6 @@ export const CommentsList = ({ comments: { comments }, handleSubmit, handleChang
                 </footer>
             </article>
         ))}
-
-        <form className="message-container" onSubmit={handleSubmit}>
-            <textarea className="message" placeholder="Write your message here..." rows="3" ></textarea>
-            <button className="sub-button" type="submit">Send Message</button>
-        </form>
-
 
     </section >
 )    
