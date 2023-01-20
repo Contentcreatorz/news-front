@@ -1,11 +1,5 @@
 import axios from "axios";
 
-export const fetchImage = (username) =>
-    fetch(`https://nc-be-project-news.onrender.com/api/users`)
-        .then(response => response.json())
-        .then(({ users }) => users.find(user => user.username === username).avatar_url)
-        .catch(error => console.log(error))
-
 export const fetchArticles = () =>
     fetch(`https://nc-be-project-news.onrender.com/api/articles`)
         .then(response => response.json())
@@ -26,6 +20,15 @@ export const fetchArticleById = (id) =>
             }
             return response.json()
         }).then(({ article }) => article).catch(error => console.log(error))
+
+export const fetchArticlesByTopic = (topic) =>
+    fetch(`https://nc-be-project-news.onrender.com/api/articles?${topic}`)
+        .then(response => response.json())
+        .then(({ articles }) => {
+            console.log('articles from api :>> ', articles);
+            return articles
+        })   
+        .catch(error => console.log(error))
 
 export const fetchCommentsByArticleId = (id) => {
     return fetch(`https://nc-be-project-news.onrender.com/api/articles/${id}/comments`)

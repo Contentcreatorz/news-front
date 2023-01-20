@@ -1,20 +1,24 @@
-import { useEffect, useState } from 'react';
-import { fetchImage } from '../utils/api';
+import { useEffect, useState } from 'react'
+import { fetchUsers } from '../utils/api'
+import { Loading } from './loading'
+import { MaskedImage } from './userImage/imagePage'
 
-export const UserImage = ({ username }) => {
-    const [imageUrl, setImageUrl] = useState(null);
-    const [loading, setLoading] = useState(true);
-
+export const UserImage = ({ username  }) => {
+    const [users, setUsers] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [picture, setPicture] = useState('')
+    
     useEffect(() => {
-        fetchImage(username).then(imageUrl => {
-            setImageUrl(imageUrl)
-            setLoading(false)
-        });
-    }, [username]);
+        setLoading(true); 
+        fetchUsers()
+        .then((users) => {
+            setUsers(users)
+            setPicture(users.find(user => user.username === username).avatar_url)
+            setLoading(false); 
+        })
+    }, [])
+    
+    if (loading) return <Loading />
 
-    return (<div className="userImageMask">
-        <div className="userContainer">
-            {loading ? <div>Loading...</div> : <img src={imageUrl} className="userImage" alt={username} />}
-        </div>
-    </div >);
-};
+    return <MaskedImage pictureSrc={picture} username={username} />
+}
