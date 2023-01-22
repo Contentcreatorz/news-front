@@ -47,12 +47,12 @@
     padding: 35px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    box-shadow: 8px 8px 16px rgba(25, 53, 102, 0.25), -8px -8px 16px rgba(255, 255, 255, 0.5);
+box-shadow: 8px 8px 18px rgba(25, 53, 102, 0.25), -8px -8px 10px 8px rgba(255, 255, 255, 0.5);
     transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955), color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     font-family: 'Blanco';
     font-weight: 400;
     line-height: 1.7;
-    background-color: #FBFBFB;
+    background-color: #ECF0F3;
     color: #2C3A47;
     border-radius: 10px;
 }
@@ -82,7 +82,7 @@
     user-select: none;
     border: rgba(255, 255, 255, 0.184) solid 1px;
     background: linear-gradient(to bottom right, #ECF0F3, white);
-    box-shadow: 4.5px 4.5px 16px rgba(25, 53, 102, 0.5), -6px -6px 16px 6px rgba(255, 255, 255, 1);
+    box-shadow: 6px 6px 16px rgba(25, 53, 102, 0.5), -6px -6px 16px 6px rgba(255, 255, 255, 1);
 }
 
 .votes-total {

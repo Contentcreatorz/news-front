@@ -16,7 +16,7 @@
         white-space: normal;
         letter-spacing: -.022em;
         font-weight: 400;
-        box-shadow: 8px 8px 18px 8px rgba(25, 53, 102, 0.25), -8px -8px 10px 8px rgba(255, 255, 255, 0.5);
+        box-shadow: 8px 8px 18px rgba(25, 53, 102, 0.25), -8px -8px 10px 8px rgba(255, 255, 255, 0.5);
         transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955), color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
