@@ -1,0 +1,34 @@
+.topic-link.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    background-color: black;
+    margin-top: 40px;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.topic-link {
+    opacity: 0.5;
+}
+
+.topic-link.active {
+    opacity: 1;
+}
+
+.topic-link.active.hide::after {
+    display: none;   
+}
+
+.topic-link {
+    opacity: 1;
+}
+
+.topic-link.active {
+    opacity: 1;
+}
+
+.topic-link:not(.active) {
+    opacity: 0.5;
+}
