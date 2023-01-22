@@ -7,11 +7,12 @@ import {
     patchVotesByArticleId,
     postMessageToArticle
 } from "../../utils/api"
-import { Loading } from "../loading"
+import { Loading } from "../Transition/loading"
 import { CommentsList } from "./comments/comments"
 import { Article } from "./singleArticle/article"
-import { Error } from "../error"
+import { Error } from "../Transition/error"
 import { SubmitComment } from "./comments/submitComment"
+import { Sending } from "../Transition/sending"
 
 export const ArticlePage = ({ username }) => {
     const { id } = useParams()
@@ -88,15 +89,16 @@ export const ArticlePage = ({ username }) => {
                 handleUpVote={handleUpVote}
                 handleDownVote={handleDownVote}
                 votes={votes}
-            />
-            
-            <CommentsList comments={comments} />
-            
+            />           
+
             {commentLoading
-                ? <Loading />
+                ? <Sending />
                 : commentError
                     ? <Error error={commentError} />
                     : <SubmitComment handleSubmit={handleSubmit} />}
+                    
+            <CommentsList comments={comments} />
         </>
+            
     )
 }

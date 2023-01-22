@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
 import { Header } from './components/Header/header';
-import { Main } from './components/main';
+import { Main } from './components/article';
 import './App.css';
 
 function App() {

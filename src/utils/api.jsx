@@ -22,21 +22,16 @@ export const fetchArticleById = (id) =>
         }).then(({ article }) => article).catch(error => console.log(error))
 
 export const fetchArticlesByTopic = (topic) =>
-    fetch(`https://nc-be-project-news.onrender.com/api/articles?${topic}`)
+    fetch(`https://nc-be-project-news.onrender.com/api/articles?topic=${topic}`)
         .then(response => response.json())
-        .then(({ articles }) => {
-            console.log('articles from api :>> ', articles);
-            return articles
-        })   
+        .then(({ articles }) => articles)
         .catch(error => console.log(error))
 
 export const fetchCommentsByArticleId = (id) => {
     return fetch(`https://nc-be-project-news.onrender.com/api/articles/${id}/comments`)
-        .then(response => {
-            return response.json()
-        }).then((comments) => {
-            return comments
-        }).catch((error) => {
+        .then(response => response.json())
+        .then(comments => comments)
+        .catch(error => {
             console.log('error :>> ', error)
         })
 }

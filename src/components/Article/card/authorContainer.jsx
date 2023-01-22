@@ -2,7 +2,7 @@ import './style.css'
 import { MaskedImage } from '../../userImage/imagePage'
 import { useEffect, useState } from 'react'
 import { fetchUsers } from '../../../utils/api'
-import { Loading } from '../../loading'
+import { Loading } from '../../Transition/loading'
 
 export const AuthorContainer = ({ article: { author } }) => {
     const [users, setUsers] = useState([])

@@ -1,12 +1,9 @@
 import moment from "moment/moment";
 import './style.css'
-import { Loading } from "../../loading";
 
-
-export const CommentsList = ({ comments: { comments }, handleSubmit, commentLoading, commentError  }) => (
+export const CommentsList = ({ comments: { comments }  }) => (
 
     < section className="comments-section" >
-        <h1 className="section-title">Comments</h1>
 
         {comments.map(({ comment_id, created_at, author, votes, body }) => (
             <article className="comment-wrap" key={`comment-${comment_id}`}>

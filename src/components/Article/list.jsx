@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import { fetchArticles, fetchUsers } from "../../utils/api"
-import { Loading } from "../loading"
+import { fetchArticles, fetchArticlesByTopic, fetchUsers } from "../../utils/api"
+import { Loading } from "../Transition/loading"
 import { ArticleCard } from "./card/card"
-import { Error } from "../error"
-import { useLocation, } from "react-router-dom"
+import { Error } from "../Transition/error"
+import { useLocation, useSearchParams, } from "react-router-dom"
 
 export const ArticleList = () => {
     const [loading, setLoading] = useState(true)
@@ -11,14 +11,20 @@ export const ArticleList = () => {
     const { pathname } = useLocation()
     const [error, setError] = useState(null)
     
+    const topic = pathname.match(/coding|cooking|football/)?.[0]
+
     useEffect(() => {
         setLoading(true)
-        fetchArticles()
-            .then(articles => {
-                setArticles(articles)
+        Promise.all([fetchArticles(), fetchArticlesByTopic(topic)])
+            .then(([articles, articlesByTopic]) => {
+                if (topic) {
+                    setArticles(articlesByTopic)
+                } else {
+                    setArticles(articles)
+                }
                 setLoading(false)
             })
-     }, [])
+     }, [pathname])
 
     if (loading) return (<Loading />)
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fetchUsers } from '../utils/api'
-import { Loading } from './loading'
+import { Loading } from './Transition/loading'
 import { MaskedImage } from './userImage/imagePage'
 
 export const UserImage = ({ username  }) => {

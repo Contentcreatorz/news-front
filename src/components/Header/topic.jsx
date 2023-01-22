@@ -1,14 +1,16 @@
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import './style.css'
+import { TopicPage } from './topic/topic'
+import { useLocation } from 'react-router-dom'
+import { fetchArticles } from '../../utils/api'
 
-export const Topic = () => (
-    <div className="topic-container">
-    <div className="topic-content">
-        <Link to={`/articles?coding`} className="topic-link">Coding</Link>
-        <div className='topic-divider' />
-        <Link to={`/articles?cooking`} className="topic-link">Cooking</Link>
-        <div className='topic-divider' />
-        <Link to={`/articles?football`} className="topic-link">Football</Link>
-    </div>
-    </div>
-)
+export const Topic = () => {
+	const { pathname } = useLocation()
+	const [activeTopic, setActiveTopic] = useState('')
+
+	useEffect(() => {
+		setActiveTopic(pathname.match(/coding|cooking|football/))
+	}, [pathname])
+
+	return <TopicPage setActiveTopic={setActiveTopic} />
+}

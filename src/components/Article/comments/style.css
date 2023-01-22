@@ -1,92 +1,89 @@
 .comments-section {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
 }
 
 .section-title {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .comment-wrap {
-    -webkit-text-size-adjust: 100%;
-    font-size: clamp(12px, .8rem + .25vw, 20px);
-    font-weight: 400;
-    line-height: 1.7;
-    color: #000;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    width: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-size: clamp(12px, 0.8rem + 0.25vw, 20px);
+	font-weight: 400;
+	line-height: 1.7;
+	color: #000;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	width: 100%;
 }
 
 .comment-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
 }
 
 .comment-meta {
-    border-top: solid rgba(25, 53, 102, 0.25) 1px;
-    min-width: 300px;
-    padding-right: 50px;
+	border-top: solid rgba(25, 53, 102, 0.25) 1px;
+	min-width: 300px;
+	padding-right: 50px;
 }
 
 .comment-author {
-    margin: 0px;
+	margin: 0px;
 }
 
 .comment-body {
-    border-radius: 10px;
-    padding-inline: 35px;
-    box-shadow: inset 2px 2px 6px rgba(25, 53, 102, 0.25),
-        -2px -2px 6px rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+	padding-inline: 35px;
+	box-shadow: inset 2px 2px 6px rgba(25, 53, 102, 0.25), -2px -2px 6px rgba(255, 255, 255, 0.5);
+	width: 100%;
 }
 
 .comment-actions {
-    white-space: nowrap;
-    width: 100px;
-    font-size: 14px;
-    margin-left: 35px;
+	white-space: nowrap;
+	width: 100px;
+	font-size: 14px;
+	margin-left: 35px;
 }
 
 .votes-up,
 .votes-down,
 .comment-delete {
-    font-weight: 600;
-}
-
-.message-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+	font-weight: 600;
 }
 
 .sub-button {
-    background-color: white;
-    margin-bottom: 0px;
-    padding: 10px;
-    border: 1px solid #737687;
-    width: max-content;
-    margin-left: 35px;
-    border-radius: 0px 0px 10px 10px;
-    cursor: pointer;
+	background-color: white;
+	margin-bottom: 0px;
+	padding: 10px;
+	border: 1px solid #737687;
+	width: max-content;
+	margin-left: 35px;
+	border-radius: 0px 0px 10px 10px;
+	cursor: pointer;
+}
+
+.message-container { 
+	padding-bottom: 35px;
 }
 
 .message {
-    -webkit-text-size-adjust: 100%;
-    font-size: clamp(12px, .8rem + .25vw, 20px);
-    font-weight: 400;
-    line-height: 1.7;
-    margin-top: 35px;
-    padding: 15px;
-    border-radius: 10px;
-    resize: vertical;
-    font-family: 'Mona';
-    line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+	font-size: clamp(12px, 0.8rem + 0.25vw, 20px);
+	font-weight: 400;
+	line-height: 1.7;
+	padding: 15px;
+	border-radius: 10px;
+	resize: vertical;
+	font-family: 'Mona';
+	line-height: 1.5;
 }
 
 .message:focus {
-    outline: none;
+	outline: none;
 }
