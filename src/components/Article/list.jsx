@@ -30,6 +30,11 @@ export const ArticleList = () => {
 
        if (error) return (<Error error={error} />)
 
-    return (articles
-        .map(article => (<ArticleCard key={article.article_id} article={article} />)))
+    return (
+        <div className="list-container">
+            <div className="sorting">sorting</div>
+            {articles
+            .map(article => (<ArticleCard key={article.article_id} article={article} />))}
+        </div>
+    )
 }
