@@ -84,6 +84,7 @@ export const ArticleList = () => {
 								<h3>Sort by:</h3>
 								<select className="sorter" name="sort_by" id="sort_by">
 									<option value="created_at">Date</option>
+									<option value="comment_count">Comments</option>
 									<option value="votes">Votes</option>
 								</select>
 							</div>
