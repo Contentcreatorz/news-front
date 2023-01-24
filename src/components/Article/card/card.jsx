@@ -8,13 +8,12 @@ import { AuthorContainer } from './authorContainer'
 export const ArticleCard = ({ article, article: {
     comment_count,
     article_id,
-    authorName,
     created_at,
-    author,
     topic,
     votes,
     title
-}, users }) => (
+}}) => (
+    <div className="containCard">
     <article role="article" className="article-card">
         <div className="card-author-info">
             <AuthorContainer article={article} />
@@ -36,5 +35,6 @@ export const ArticleCard = ({ article, article: {
             <span itemProp="articleSection">{topic}</span>
         </footer>
     </article>
+    </div>
 )
 

@@ -27,6 +27,13 @@ export const fetchArticlesByTopic = (topic) =>
         .then(({ articles }) => articles)
         .catch(error => console.log(error))
 
+export const fetchArticlesByTitle = (title) => {
+    return fetch(`https://nc-be-project-news.onrender.com/api/articles?title=${title}`)
+        .then(response => response.json())
+        .then(({ articles }) => articles)
+        .catch(error => console.log(error))
+}
+
 export const fetchCommentsByArticleId = (id) => {
     return fetch(`https://nc-be-project-news.onrender.com/api/articles/${id}/comments`)
         .then(response => response.json())

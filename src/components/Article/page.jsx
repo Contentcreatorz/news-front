@@ -83,7 +83,7 @@ export const ArticlePage = ({ username }) => {
     if (error) return (<Error error={error} />)
 
     return (
-        <>
+        <div className="page">
             <Article
                 article={article}
                 handleUpVote={handleUpVote}
@@ -98,7 +98,7 @@ export const ArticlePage = ({ username }) => {
                     : <SubmitComment handleSubmit={handleSubmit} />}
                     
             <CommentsList comments={comments} />
-        </>
+        </div>
             
     )
 }
