@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import './style.css'
 import { TopicPage } from './topic/topic'
 import { useLocation } from 'react-router-dom'
-import { fetchArticles } from '../../utils/api'
 
 export const Topic = () => {
 	const { pathname } = useLocation()

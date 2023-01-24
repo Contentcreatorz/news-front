@@ -72,6 +72,10 @@ export const ArticleList = () => {
 								placeholder={`🔍 Search for Article`}
 								onChange={handleChange}
 							/>
+
+							<button type="submit" className="search-button">
+								Search
+							</button>
 						</div>
 
 						<div className="archordion">
