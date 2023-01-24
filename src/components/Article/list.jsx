@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { fetchArticles, fetchArticlesByTitle } from '../../utils/api'
+import { fetchArticles, fetchArticlesByQuery, fetchArticlesByTitle } from '../../utils/api'
 import { Loading } from '../Transition/loading'
 import { ArticleCard } from './card/card'
 import { Error } from '../Transition/error'
@@ -24,10 +24,19 @@ export const ArticleList = () => {
 	const handleSubmit = e => {
 		e.preventDefault()
 		setLoading(true)
-		fetchArticlesByTitle(search).then(articles => {
-			setArticles(articles)
-			setLoading(false)
-		})
+		
+		const sortBy = e.target.sort_by.value
+		const order = e.target.order.value 	
+
+		fetchArticlesByQuery(search, sortBy, order)
+			.then(({articles}) => {
+				setArticles(articles)
+				setLoading(false)
+			})
+			.catch(error => {
+				setError(error)	
+				setLoading(false)	
+			})
 	}
 
 	useEffect(() => {
@@ -53,9 +62,6 @@ export const ArticleList = () => {
 				<div className="filtering">
 					<div className="titles">
 						<h3>Filters</h3>
-						<button className="load" onClick={handleSubmit}>
-							Load
-						</button>
 					</div>
 					<form className="sorting" onSubmit={handleSubmit}>
 						<div className="search-container">
@@ -74,7 +80,6 @@ export const ArticleList = () => {
 								<h3>Sort by:</h3>
 								<select className="sorter" name="sort_by" id="sort_by">
 									<option value="created_at">Date</option>
-									<option value="comment_count">Comments</option>
 									<option value="votes">Votes</option>
 								</select>
 							</div>

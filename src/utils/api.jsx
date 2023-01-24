@@ -27,12 +27,16 @@ export const fetchArticlesByTopic = (topic) =>
         .then(({ articles }) => articles)
         .catch(error => console.log(error))
 
-export const fetchArticlesByTitle = (title) => {
-    return fetch(`https://nc-be-project-news.onrender.com/api/articles?title=${title}`)
-        .then(response => response.json())
-        .then(({ articles }) => articles)
+export const fetchArticlesByQuery = (title, sort_by, order) => axios
+    .get(`https://nc-be-project-news.onrender.com/api/articles`, {
+        params: {
+            title,
+            sort_by,
+            order
+        }
+    })
+        .then(response =>  response.data)
         .catch(error => console.log(error))
-}
 
 export const fetchCommentsByArticleId = (id) => {
     return fetch(`https://nc-be-project-news.onrender.com/api/articles/${id}/comments`)
