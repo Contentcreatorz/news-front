@@ -26,9 +26,7 @@ export const TopicPage = ({setActiveTopic}) => (
 				onClick={() => setActiveTopic('football')}
 			>
 				Football
-            </Link>
-            
-
+            </Link>          
 
 		</div>
 	</div>

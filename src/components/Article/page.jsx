@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import {
+    deleteCommentsByArticleId,
     fetchArticleById,
     fetchCommentsByArticleId,
     fetchUsers,
@@ -24,6 +25,7 @@ export const ArticlePage = ({ username }) => {
     const [votes, setVotes] = useState(0)
     const [error, setError] = useState(null)
     const [commentError, setCommentError] = useState(null)
+    const [deleting, setDeleting] = useState(0)
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -38,22 +40,35 @@ export const ArticlePage = ({ username }) => {
             setCommentError(error?.message)
                 console.log('error :>> ', error)
             })
-        }
-
-    const handleUpVote = () => {
-        setVotes(votes + 1)
-        patchVotesByArticleId(id, { inc_votes: + 1 })
-            .catch(error => {
-                setError(error?.message)
-            });
     }
 
-    const handleDownVote = () => {
+    function handleDelete (comment_id) {
+        setDeleting(comment_id)
+        deleteCommentsByArticleId(comment_id)
+            .then(() => {
+                console.log('comment deleted')
+                setDeleting(0)
+            })
+            .catch(error => {
+                setDeleting(0)
+                setError(error?.message)
+            })
+    }
+    
+    function handleUpVote() {
+        setVotes(votes + 1)
+        patchVotesByArticleId(id, { inc_votes: +1 })
+            .catch(error => {
+                setError(error?.message)
+            })
+    }
+
+    function handleDownVote() {
         setVotes(votes - 1)
         patchVotesByArticleId(id, { inc_votes: -1 })
             .catch(error => {
                 setError(error?.message)
-            });
+            })
     }
 
     useEffect(() => {
@@ -64,7 +79,7 @@ export const ArticlePage = ({ username }) => {
             .catch(error => {
                 setError(error?.message)
             })
-    }, [commentLoading])
+    }, [commentLoading,deleting])
     
     useEffect(() => {
         Promise.all([fetchArticleById(id), fetchCommentsByArticleId(id), fetchUsers()])
@@ -95,9 +110,9 @@ export const ArticlePage = ({ username }) => {
                 ? <Sending />
                 : commentError
                     ? <Error error={commentError} />
-                    : <SubmitComment handleSubmit={handleSubmit} />}
+                    : <SubmitComment handleSubmit={handleSubmit}  />}
                     
-            <CommentsList comments={comments} />
+              <CommentsList comments={comments} deleting={deleting} onDelete={handleDelete} />}
         </div>
             
     )
