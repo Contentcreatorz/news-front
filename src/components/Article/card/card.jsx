@@ -1,7 +1,6 @@
 import './style.css'
 import moment from "moment/moment"
 import { Link } from "react-router-dom"
-import { UserImage } from '../../userImage'
 import { formatCommentCount, formatVoteCount } from '../../../utils/display'
 import { AuthorContainer } from './authorContainer'
 
@@ -14,7 +13,7 @@ export const ArticleCard = ({ article, article: {
     title
 }}) => (
     <div className="containCard">
-    <article role="article" className="article-card">
+    <article className="article-card">
         <div className="card-author-info">
             <AuthorContainer article={article} />
             <div className="card-votes" itemProp="upvoteCount">{`❤ ${formatVoteCount(votes)}`}</div>

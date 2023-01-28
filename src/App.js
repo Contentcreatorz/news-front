@@ -1,11 +1,11 @@
 import { BrowserRouter } from 'react-router-dom';
-import { useState } from 'react';
 import { Header } from './components/Header/header';
 import { Main } from './components/article';
 import './App.css';
 
 function App() {
-  const [username, setUsername] = useState('happyamy2016')
+  // const [username, setUsername] = useState('happyamy2016')
+  const username = 'happyamy2016';
   
   return (
     <BrowserRouter>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { fetchArticles, fetchArticlesByQuery, fetchArticlesByTitle } from '../../utils/api'
+import { fetchArticles, fetchArticlesByQuery } from '../../utils/api'
 import { Loading } from '../Transition/loading'
 import { ArticleCard } from './card/card'
 import { Error } from '../Transition/error'

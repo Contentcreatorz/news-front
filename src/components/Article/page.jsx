@@ -78,7 +78,7 @@ export const ArticlePage = ({ username }) => {
             .catch(error => {
                 setError(error?.message)
             })
-    }, [commentLoading,deleting])
+    }, [commentLoading,deleting,id])
     
     useEffect(() => {
         Promise.all([fetchArticleById(id), fetchCommentsByArticleId(id), fetchUsers()])
