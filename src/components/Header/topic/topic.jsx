@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom'
 import './style.css'
 
-export const TopicPage = ({setActiveTopic}) => (
+export const TopicPage = ({setSelectedCategory}) => (
 	<div className="topic-container">
 		<div className="topic-content">
 			<Link
 				to={`/articles/coding`}
 				className={`topic-link coding`}
-				onClick={() => setActiveTopic('coding')}
 			>
 				Coding
 			</Link>
@@ -15,7 +14,6 @@ export const TopicPage = ({setActiveTopic}) => (
 			<Link
 				to={`/articles/cooking`}
 				className={`topic-link cooking`}
-				onClick={() => setActiveTopic('cooking')}
 			>
 				Cooking
 			</Link>
@@ -23,7 +21,6 @@ export const TopicPage = ({setActiveTopic}) => (
 			<Link
 				to={`/articles/football`}
 				className={`topic-link football`}
-				onClick={() => setActiveTopic('football')}
 			>
 				Football
             </Link>          

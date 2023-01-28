@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { fetchArticles, fetchArticlesByQuery } from '../../utils/api'
+import { fetchArticlesByQuery, fetchArticlesByTopic } from '../../utils/api'
 import { Loading } from '../Transition/loading'
 import { ArticleCard } from './card/card'
 import { Error } from '../Transition/error'
@@ -41,7 +41,7 @@ export const ArticleList = () => {
 
 	useEffect(() => {
 		setLoading(true)
-		fetchArticles().then(articles => {
+		fetchArticlesByTopic(pathname.replace(/.*\/(.*)/,'$1')).then(articles => {
 			setArticles(articles)
 			setLoading(false)
 		})
