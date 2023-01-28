@@ -46,7 +46,6 @@ export const ArticlePage = ({ username }) => {
         setDeleting(comment_id)
         deleteCommentsByArticleId(comment_id)
             .then(() => {
-                console.log('comment deleted')
                 setDeleting(0)
             })
             .catch(error => {
@@ -112,7 +111,7 @@ export const ArticlePage = ({ username }) => {
                     ? <Error error={commentError} />
                     : <SubmitComment handleSubmit={handleSubmit}  />}
                     
-              <CommentsList comments={comments} deleting={deleting} onDelete={handleDelete} />}
+              <CommentsList comments={comments} deleting={deleting} username={username} onDelete={handleDelete} />}
         </div>
             
     )
