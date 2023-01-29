@@ -3,172 +3,172 @@
 .Article,
 .message-container,
 .comments-section {
-    display: flex;
-    flex-direction: column;
-    margin: 35px;
+	display: flex;
+	flex-direction: column;
+	margin: 35px;
 }
 
-.spacer { 
-    display: flex;
-    justify-content: center;
-    max-width: 1350px;
-    width: 100%;
-    margin: auto;
+.spacer {
+	display: flex;
+	justify-content: center;
+	max-width: 1350px;
+	width: 100%;
+	margin: auto;
 }
 
-.container { 
-    display: flex;
-    flex-direction: row;
+.container {
+	display: flex;
+	flex-direction: row;
 }
 
-.filtering { 
-    max-width: 300px;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.filtering {
+	max-width: 300px;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
-.search-container{ 
-display: flex;
-justify-content: center;
-align-items: center;
+.search-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.search-button { 
-    border-radius: 10px;
-    border: none;
-    padding-inline: 15px;
-    padding-block: 5px;
-    box-shadow: 6px 6px 16px rgba(25, 53, 102, 0.5), -6px -6px 16px 6px rgba(255, 255, 255, 1);
+.search-button {
+	border-radius: 10px;
+	border: none;
+	padding-inline: 15px;
+	padding-block: 5px;
+	box-shadow: 6px 6px 16px rgba(25, 53, 102, 0.5), -6px -6px 16px 6px rgba(255, 255, 255, 1);
 }
 
-.search-button:active { 
-        box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
+.search-button:active {
+	box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
 }
 
-.search { 
-    border-radius: 10px;
-    padding: 15px;
-    border:     1px solid black;
-    margin: 15px;
-    width: 100%;
+.search {
+	border-radius: 10px;
+	padding: 15px;
+	border: 1px solid black;
+	margin: 15px;
+	width: 100%;
 }
 
 .dropdown,
-.order { 
- display: flex;
- justify-content: space-between;
- align-items: center;
+.order {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .sorter {
-    border-radius: 10px;
-    max-width: 115px;
-    padding: 5px;
-
+	border-radius: 10px;
+	max-width: 115px;
+	padding: 5px;
 }
 
 .sorting {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}   
-
-.titles,.archordion h3, 
-button {
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
 }
 
-.Article>* {
-    margin-bottom: 15px;
+.titles,
+.archordion h3,
+button {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Article > * {
+	margin-bottom: 15px;
 }
 
 .article-title {
-    font-size: 42px;
-    font-weight: bold;
+	font-size: 42px;
+	font-weight: bold;
 }
 
 .article-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .article-topic {
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
-    text-transform: uppercase;
-    border-radius: 50px;
-    padding-block: 5px;
-    padding-inline: 10px;
-    width: max-content;
-    background-color: cornflowerblue;
+	font-size: 16px;
+	font-weight: 400;
+	color: white;
+	text-transform: uppercase;
+	border-radius: 50px;
+	padding-block: 5px;
+	padding-inline: 10px;
+	width: max-content;
+	background-color: cornflowerblue;
 }
 
 .article-author {
-    font-weight: 300;
-    font-size: 16px;
-    color: #737687;
+	font-weight: 300;
+	font-size: 16px;
+	color: #737687;
 }
 
 .article-body {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 35px;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-box-shadow: 8px 8px 18px rgba(25, 53, 102, 0.25), -8px -8px 10px 8px rgba(255, 255, 255, 0.5);
-    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955), color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    font-family: 'Blanco';
-    font-weight: 400;
-    line-height: 1.7;
-    background-color: #ECF0F3;
-    color: #2C3A47;
-    border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	padding: 35px;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	box-shadow: 8px 8px 18px rgba(25, 53, 102, 0.25), -8px -8px 10px 8px rgba(255, 255, 255, 0.5);
+	transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+		color 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	font-weight: 400;
+	line-height: 1.7;
+	background-color: #ecf0f3;
+	color: #2c3a47;
+	border-radius: 10px;
 }
 
 .article-title,
 .article-comment_count,
 .article-created_at {
-    color: #193566;
+	color: #193566;
 }
 
 .article-meta {
-    display: inline-block;
+	display: inline-block;
 }
 
-.article-meta>* {
-    font-size: 16px;
-    font-weight: 400;
-    color: black;
-    text-transform: uppercase;
-    border-radius: 50px;
-    width: max-content;
-    background-color: white;
-    margin: 20px;
-    padding-block: 5px;
-    padding-inline: 10px;
-    cursor: pointer;
-    user-select: none;
-    border: rgba(255, 255, 255, 0.184) solid 1px;
-    background: linear-gradient(to bottom right, #ECF0F3, white);
-    box-shadow: 6px 6px 16px rgba(25, 53, 102, 0.5), -6px -6px 16px 6px rgba(255, 255, 255, 1);
+.article-meta > * {
+	font-size: 16px;
+	font-weight: 400;
+	color: black;
+	text-transform: uppercase;
+	border-radius: 50px;
+	width: max-content;
+	background-color: white;
+	margin: 20px;
+	padding-block: 5px;
+	padding-inline: 10px;
+	cursor: pointer;
+	user-select: none;
+	border: rgba(255, 255, 255, 0.184) solid 1px;
+	background: linear-gradient(to bottom right, #ecf0f3, white);
+	box-shadow: 6px 6px 16px rgba(25, 53, 102, 0.5), -6px -6px 16px 6px rgba(255, 255, 255, 1);
 }
 
 .votes-total {
-    color: #2C3A47;
-    font-size: 20px;
+	color: #2c3a47;
+	font-size: 20px;
 }
 
 .votes-up:active {
-    box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
-    color: green;
+	box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
+	color: green;
 }
 
 .votes-down:active {
-    box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
-    color: crimson;
+	box-shadow: inset 2px 2px 8px rgba(25, 53, 102, 0.5), -2px -2px 8px rgba(255, 255, 255, 1);
+	color: crimson;
 }

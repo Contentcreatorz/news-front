@@ -10,7 +10,7 @@ export const SearchBar = ({ queryName }) => {
             prefix={<span>🔍</span>}
             value={searchValue}
             onChange={e => setSearchValue(e.target.value)}
-            style={{ width: 286, height: 35, fontSize: 20 }}
+            style={{ width: 286, height: 35, fontSize: 20, fontFamily: 'Mona'}}
         />
     );
 };
